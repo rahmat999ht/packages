@@ -103,8 +103,9 @@ class TextForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final sizeWidth = MediaQuery.of(context).size.width;
     return SizedBox(
-      width: width ?? SizeApp.sizeWidth,
+      width: width ?? sizeWidth,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
@@ -118,7 +119,7 @@ class TextForm extends StatelessWidget {
                 color: Colors.grey,
               ),
             ),
-          if (isTitle) SizeApp.isHeight(10).sH,
+          if (isTitle) 10.sizeWidth,
           TextFormField(
             onChanged: onChanged,
             maxLength: maxLength,
