@@ -8,7 +8,9 @@ class TextForm extends StatelessWidget {
   final String? titel;
   final String? hintText;
   final String? info;
-  final Color? color;
+  final Color? colorBorder;
+  final Color? colorFocusBorder;
+  final Color? colorBg;
   final Widget? icon;
   final Widget? suffixIcon;
   final Widget? prefixIcon;
@@ -21,7 +23,6 @@ class TextForm extends StatelessWidget {
   final bool isCheck;
   final bool isTitle;
   final bool isBorder;
-  final bool isBg;
   final int? maxLength;
   final double? radius;
   const TextForm({
@@ -32,7 +33,7 @@ class TextForm extends StatelessWidget {
     this.width,
     this.icon,
     this.info,
-    this.color,
+    this.colorBorder,
     this.validator,
     this.textInputType,
     this.inputFormatters,
@@ -40,13 +41,14 @@ class TextForm extends StatelessWidget {
     this.isCheck = false,
     this.isTitle = false,
     this.isBorder = false,
-    this.isBg = false,
     this.maxLength,
     this.radius,
     this.suffixIcon,
     this.prefixIcon,
     this.onChanged,
     this.isPhone = false,
+    this.colorFocusBorder,
+    this.colorBg,
   });
 
   const TextForm.isTitle({
@@ -57,20 +59,21 @@ class TextForm extends StatelessWidget {
     this.width,
     this.icon,
     this.info,
-    this.color,
+    this.colorBorder,
     this.validator,
     this.textInputType,
     this.inputFormatters,
     this.onTap,
     this.isCheck = false,
     this.isBorder = false,
-    this.isBg = false,
     this.maxLength,
     this.radius,
     this.suffixIcon,
     this.prefixIcon,
     this.onChanged,
     this.isPhone = false,
+    this.colorFocusBorder,
+    this.colorBg,
   }) : isTitle = true;
 
   const TextForm.border({
@@ -81,7 +84,7 @@ class TextForm extends StatelessWidget {
     this.width,
     this.icon,
     this.info,
-    this.color,
+    this.colorBorder,
     this.validator,
     this.textInputType,
     this.inputFormatters,
@@ -94,8 +97,9 @@ class TextForm extends StatelessWidget {
     this.suffixIcon,
     this.prefixIcon,
     this.onChanged,
-  })  : isBorder = true,
-        isBg = false;
+    this.colorFocusBorder,
+    this.colorBg,
+  }) : isBorder = true;
 
   @override
   Widget build(BuildContext context) {
@@ -134,28 +138,28 @@ class TextForm extends StatelessWidget {
             keyboardType: isPhone ? TextInputType.phone : textInputType,
             inputFormatters: inputFormatters,
             decoration: InputDecoration(
-              fillColor: isBg ? color : Colors.transparent,
+              fillColor: colorBg ?? Colors.transparent,
               enabledBorder: OutlineInputBorder(
                 borderSide: isBorder
-                    ? BorderSide(color: color ?? Colors.grey)
+                    ? BorderSide(color: colorBorder ?? Colors.grey)
                     : BorderSide.none,
                 borderRadius: BorderRadius.circular(radius ?? 8),
               ),
               focusedBorder: OutlineInputBorder(
                 borderSide: isBorder
-                    ? BorderSide(color: color ?? Colors.grey)
+                    ? BorderSide(color: colorFocusBorder ?? Colors.grey)
                     : BorderSide.none,
                 borderRadius: BorderRadius.circular(radius ?? 8),
               ),
               errorBorder: OutlineInputBorder(
                 borderSide: isBorder
-                    ? BorderSide(color: color ?? Colors.red)
+                    ? const BorderSide(color: Colors.red)
                     : BorderSide.none,
                 borderRadius: BorderRadius.circular(radius ?? 8),
               ),
               focusedErrorBorder: OutlineInputBorder(
                 borderSide: isBorder
-                    ? BorderSide(color: color ?? Colors.red)
+                    ? const BorderSide(color: Colors.red)
                     : BorderSide.none,
                 borderRadius: BorderRadius.circular(radius ?? 8),
               ),
