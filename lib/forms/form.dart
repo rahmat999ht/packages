@@ -5,6 +5,8 @@ import 'package:packages/extensions/size_app.dart';
 class TextForm extends StatelessWidget {
   final TextEditingController controller;
   final double? width;
+  final double? contentVertical;
+  final double? contentHorizontal;
   final String? titel;
   final String? hintText;
   final String? info;
@@ -49,6 +51,8 @@ class TextForm extends StatelessWidget {
     this.isPhone = false,
     this.colorFocusBorder,
     this.colorBg,
+    this.contentVertical,
+    this.contentHorizontal,
   });
 
   const TextForm.isTitle({
@@ -74,6 +78,8 @@ class TextForm extends StatelessWidget {
     this.isPhone = false,
     this.colorFocusBorder,
     this.colorBg,
+    this.contentVertical,
+    this.contentHorizontal,
   }) : isTitle = true;
 
   const TextForm.border({
@@ -99,6 +105,8 @@ class TextForm extends StatelessWidget {
     this.onChanged,
     this.colorFocusBorder,
     this.colorBg,
+    this.contentVertical,
+    this.contentHorizontal,
   }) : isBorder = true;
 
   @override
@@ -168,8 +176,10 @@ class TextForm extends StatelessWidget {
               labelText: isTitle ? null : titel,
               hintText: hintText,
               alignLabelWithHint: true,
-              contentPadding:
-                  const EdgeInsets.symmetric(horizontal: 14, vertical: 16),
+              contentPadding: EdgeInsets.symmetric(
+                horizontal: contentHorizontal ?? 14,
+                vertical: contentVertical ?? 16,
+              ),
               isDense: true,
               suffixIcon: suffixIcon,
               icon: icon,
