@@ -49,7 +49,7 @@ class ButtonPrymary extends StatelessWidget {
               // "Get Started",
               text,
               style: TextStyle(
-                fontSize: fontSize ?? 24,
+                fontSize: fontSize ?? 16,
                 color: textColor ?? Colors.white,
               ),
             ),

@@ -7,13 +7,17 @@ class ButtonOutline extends StatelessWidget {
     required this.text,
     this.height,
     this.width,
-    this.txSize,
+    this.fontSize,
+    this.fontColor,
+    this.colorBorder,
   });
   final void Function() onPressed;
   final String text;
   final double? height;
   final double? width;
-  final double? txSize;
+  final double? fontSize;
+  final Color? fontColor;
+  final Color? colorBorder;
   @override
   Widget build(BuildContext context) {
     final sizeWidth = MediaQuery.of(context).size.width;
@@ -28,18 +32,17 @@ class ButtonOutline extends StatelessWidget {
             Radius.circular(10),
           ),
         ),
-        side: const BorderSide(
+        side: BorderSide(
           width: 2.0,
-          color: Colors.black38,
+          color: colorBorder ?? Colors.blue,
         ),
       ),
       onPressed: onPressed,
       child: Text(
-        // "Get Started",
         text,
         style: TextStyle(
-          fontSize: txSize ?? 14,
-          color: Colors.black38,
+          fontSize: fontSize ?? 14,
+          color: fontColor ?? Colors.black38,
         ),
       ),
     );
