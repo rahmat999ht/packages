@@ -27,11 +27,13 @@ class TextForm extends StatelessWidget {
   final bool isBorder;
   final int? maxLength;
   final double? radius;
+  final double? hintSize;
   const TextForm({
     super.key,
     required this.controller,
     this.titel,
     this.hintText,
+    this.hintSize,
     this.width,
     this.icon,
     this.info,
@@ -59,6 +61,7 @@ class TextForm extends StatelessWidget {
     super.key,
     required this.controller,
     required this.titel,
+    this.hintSize,
     this.hintText,
     this.width,
     this.icon,
@@ -87,6 +90,7 @@ class TextForm extends StatelessWidget {
     required this.controller,
     required this.titel,
     this.hintText,
+    this.hintSize,
     this.width,
     this.icon,
     this.info,
@@ -175,6 +179,10 @@ class TextForm extends StatelessWidget {
               filled: true,
               labelText: isTitle ? null : titel,
               hintText: hintText,
+              hintStyle: TextStyle(
+                color: Colors.black38,
+                fontSize: hintSize ?? 14,
+              ),
               alignLabelWithHint: true,
               contentPadding: EdgeInsets.symmetric(
                 horizontal: contentHorizontal ?? 14,

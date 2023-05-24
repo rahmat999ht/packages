@@ -11,6 +11,7 @@ class ButtonPrymary extends StatelessWidget {
     this.height,
     this.width,
     this.fontSize,
+    this.radius,
   });
 
   final void Function() onPressed;
@@ -21,6 +22,7 @@ class ButtonPrymary extends StatelessWidget {
   final double? height;
   final double? width;
   final double? fontSize;
+  final double? radius;
 
   @override
   Widget build(BuildContext context) {
@@ -32,9 +34,9 @@ class ButtonPrymary extends StatelessWidget {
           width ?? sizeWidth,
           height ?? 25,
         ),
-        shape: const RoundedRectangleBorder(
+        shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.all(
-            Radius.circular(10),
+            Radius.circular(radius ?? 10),
           ),
         ),
       ),
