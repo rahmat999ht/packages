@@ -15,8 +15,8 @@ class ButtonText extends StatelessWidget {
   const ButtonText.isIcon(
     this.title, {
     super.key,
-    required this.onTap,
     required this.icon,
+    required this.onTap,
     this.rigtIcon = false,
     this.iconColor,
     this.titleColor,

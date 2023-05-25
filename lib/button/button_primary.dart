@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 class ButtonPrymary extends StatelessWidget {
   const ButtonPrymary({
     super.key,
-    required this.onPressed,
     required this.text,
+    required this.onPressed,
     this.textColor,
     this.isLoading = false,
     this.bgColor,
@@ -14,8 +14,8 @@ class ButtonPrymary extends StatelessWidget {
     this.radius,
   });
 
-  final void Function() onPressed;
   final String text;
+  final void Function() onPressed;
   final Color? textColor;
   final Color? bgColor;
   final bool? isLoading;

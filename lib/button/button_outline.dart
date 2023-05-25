@@ -3,19 +3,21 @@ import 'package:flutter/material.dart';
 class ButtonOutline extends StatelessWidget {
   const ButtonOutline({
     super.key,
-    required this.onPressed,
     required this.text,
+    required this.onPressed,
     this.height,
     this.width,
     this.fontSize,
+    this.radius,
     this.fontColor,
     this.colorBorder,
   });
-  final void Function() onPressed;
   final String text;
+  final void Function() onPressed;
   final double? height;
   final double? width;
   final double? fontSize;
+  final double? radius;
   final Color? fontColor;
   final Color? colorBorder;
   @override
@@ -27,9 +29,9 @@ class ButtonOutline extends StatelessWidget {
           width ?? sizeWidth,
           height ?? 25,
         ),
-        shape: const RoundedRectangleBorder(
+        shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.all(
-            Radius.circular(10),
+            Radius.circular(radius ?? 10),
           ),
         ),
         side: BorderSide(
