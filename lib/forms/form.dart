@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:packages/extensions/size_app.dart';
 
 class TextForm extends StatelessWidget {
   final TextEditingController controller;
@@ -28,6 +27,7 @@ class TextForm extends StatelessWidget {
   final int? maxLength;
   final double? radius;
   final double? hintSize;
+  final double? distance;
   const TextForm({
     super.key,
     required this.controller,
@@ -55,6 +55,7 @@ class TextForm extends StatelessWidget {
     this.colorBg,
     this.contentVertical,
     this.contentHorizontal,
+    this.distance,
   });
 
   const TextForm.isTitle({
@@ -82,6 +83,7 @@ class TextForm extends StatelessWidget {
     this.colorFocusBorder,
     this.colorBg,
     this.contentVertical,
+    this.distance,
     this.contentHorizontal,
   }) : isTitle = true;
 
@@ -110,6 +112,7 @@ class TextForm extends StatelessWidget {
     this.colorFocusBorder,
     this.colorBg,
     this.contentVertical,
+    this.distance,
     this.contentHorizontal,
   }) : isBorder = true;
 
@@ -131,7 +134,7 @@ class TextForm extends StatelessWidget {
                 color: Colors.grey,
               ),
             ),
-          if (isTitle) 10.sizeWidth,
+          if (isTitle) SizedBox(height: distance ?? 10),
           TextFormField(
             onChanged: onChanged,
             maxLength: maxLength,
