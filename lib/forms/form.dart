@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
 class TextForm extends StatelessWidget {
   final TextEditingController controller;
@@ -152,7 +153,16 @@ class TextForm extends StatelessWidget {
             readOnly: onTap != null,
             onTap: onTap,
             keyboardType: isPhone ? TextInputType.phone : textInputType,
-            inputFormatters: inputFormatters,
+            inputFormatters: isPhone
+                ? [
+                    MaskTextInputFormatter(
+                      mask: '+62############',
+                      filter: {"#": RegExp(r'[0-9]')},
+                      initialText: "##",
+                      type: MaskAutoCompletionType.eager,
+                    ),
+                  ]
+                : inputFormatters,
             decoration: InputDecoration(
               fillColor: colorBg ?? Colors.transparent,
               enabledBorder: OutlineInputBorder(
