@@ -6,7 +6,7 @@ class TextForm extends StatelessWidget {
   final double? width;
   final double? contentVertical;
   final double? contentHorizontal;
-  final String? titel;
+  final String? title;
   final String? hintText;
   final String? info;
   final Color? colorBorder;
@@ -31,7 +31,7 @@ class TextForm extends StatelessWidget {
   const TextForm({
     super.key,
     required this.controller,
-    this.titel,
+    this.title,
     this.hintText,
     this.hintSize,
     this.width,
@@ -61,7 +61,7 @@ class TextForm extends StatelessWidget {
   const TextForm.isTitle({
     super.key,
     required this.controller,
-    required this.titel,
+    required this.title,
     this.hintSize,
     this.hintText,
     this.width,
@@ -90,7 +90,7 @@ class TextForm extends StatelessWidget {
   const TextForm.border({
     super.key,
     required this.controller,
-    required this.titel,
+    required this.title,
     this.hintText,
     this.hintSize,
     this.width,
@@ -127,7 +127,7 @@ class TextForm extends StatelessWidget {
         children: [
           if (isTitle)
             Text(
-              titel!,
+              title!,
               style: const TextStyle(
                 fontSize: 14,
                 fontWeight: FontWeight.bold,
@@ -180,7 +180,7 @@ class TextForm extends StatelessWidget {
                 borderRadius: BorderRadius.circular(radius ?? 8),
               ),
               filled: true,
-              labelText: isTitle ? null : titel,
+              labelText: isTitle ? null : title,
               hintText: hintText,
               hintStyle: TextStyle(
                 color: Colors.black38,
