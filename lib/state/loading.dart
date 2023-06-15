@@ -15,7 +15,7 @@ class LoadingState extends StatelessWidget {
           const CircularProgressIndicator(
             color: Colors.grey,
           ),
-          10.sizeWidth,
+          10.sW,
           const Text(
             "Proses ...",
           ),
