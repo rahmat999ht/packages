@@ -9,6 +9,7 @@ class TextForm extends StatelessWidget {
   final double? contentHorizontal;
   final String? title;
   final String? hintText;
+  final String? titleSize;
   final String? info;
   final Color? colorBorder;
   final Color? colorFocusBorder;
@@ -35,6 +36,7 @@ class TextForm extends StatelessWidget {
     this.title,
     this.hintText,
     this.hintSize,
+    this.titleSize,
     this.width,
     this.icon,
     this.info,
@@ -65,6 +67,7 @@ class TextForm extends StatelessWidget {
     required this.title,
     this.hintSize,
     this.hintText,
+    this.titleSize,
     this.width,
     this.icon,
     this.info,
@@ -94,6 +97,7 @@ class TextForm extends StatelessWidget {
     required this.title,
     this.hintText,
     this.hintSize,
+    this.titleSize,
     this.width,
     this.icon,
     this.info,
@@ -191,6 +195,10 @@ class TextForm extends StatelessWidget {
               ),
               filled: true,
               labelText: isTitle ? null : title,
+              labelStyle: TextStyle(
+                color: Colors.black54,
+                fontSize: hintSize ?? 14,
+              ),
               hintText: hintText,
               hintStyle: TextStyle(
                 color: Colors.black38,
