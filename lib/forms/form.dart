@@ -12,6 +12,7 @@ class TextForm extends StatelessWidget {
   final String? titleSize;
   final String? info;
   final Color? colorBorder;
+  final Color? labelColor;
   final Color? colorFocusBorder;
   final Color? colorBg;
   final Widget? icon;
@@ -59,6 +60,7 @@ class TextForm extends StatelessWidget {
     this.contentVertical,
     this.contentHorizontal,
     this.distance,
+    this.labelColor,
   });
 
   const TextForm.isTitle({
@@ -89,6 +91,7 @@ class TextForm extends StatelessWidget {
     this.contentVertical,
     this.distance,
     this.contentHorizontal,
+    this.labelColor,
   }) : isTitle = true;
 
   const TextForm.border({
@@ -119,6 +122,7 @@ class TextForm extends StatelessWidget {
     this.contentVertical,
     this.distance,
     this.contentHorizontal,
+    this.labelColor,
   }) : isBorder = true;
 
   @override
@@ -196,7 +200,7 @@ class TextForm extends StatelessWidget {
               filled: true,
               labelText: isTitle ? null : title,
               labelStyle: TextStyle(
-                color: Colors.black54,
+                color: labelColor ?? Colors.black54,
                 fontSize: hintSize ?? 14,
               ),
               hintText: hintText,
