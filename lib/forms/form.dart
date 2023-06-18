@@ -27,6 +27,7 @@ class TextForm extends StatelessWidget {
   final bool isCheck;
   final bool isTitle;
   final bool isBorder;
+  final bool? obscureText;
   final int? maxLength;
   final double? radius;
   final double? hintSize;
@@ -49,6 +50,7 @@ class TextForm extends StatelessWidget {
     this.isCheck = false,
     this.isTitle = false,
     this.isBorder = false,
+    this.obscureText = false,
     this.maxLength,
     this.radius,
     this.suffixIcon,
@@ -80,6 +82,7 @@ class TextForm extends StatelessWidget {
     this.onTap,
     this.isCheck = false,
     this.isBorder = false,
+    this.obscureText = false,
     this.maxLength,
     this.radius,
     this.suffixIcon,
@@ -112,6 +115,7 @@ class TextForm extends StatelessWidget {
     this.isCheck = false,
     this.isTitle = false,
     this.isPhone = false,
+    this.obscureText = false,
     this.maxLength,
     this.radius,
     this.suffixIcon,
@@ -145,6 +149,7 @@ class TextForm extends StatelessWidget {
             ),
           if (isTitle) SizedBox(height: distance ?? 10),
           TextFormField(
+            obscureText: obscureText!,
             onChanged: onChanged,
             maxLength: maxLength,
             maxLines: null,
