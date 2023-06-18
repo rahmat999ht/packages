@@ -15,6 +15,7 @@ class TextForm extends StatelessWidget {
   final Color? labelColor;
   final Color? colorFocusBorder;
   final Color? colorBg;
+  final Color? cursorColor;
   final Widget? icon;
   final Widget? suffixIcon;
   final Widget? prefixIcon;
@@ -43,6 +44,7 @@ class TextForm extends StatelessWidget {
     this.icon,
     this.info,
     this.colorBorder,
+    this.cursorColor,
     this.validator,
     this.textInputType,
     this.inputFormatters,
@@ -76,6 +78,7 @@ class TextForm extends StatelessWidget {
     this.icon,
     this.info,
     this.colorBorder,
+    this.cursorColor,
     this.validator,
     this.textInputType,
     this.inputFormatters,
@@ -108,6 +111,7 @@ class TextForm extends StatelessWidget {
     this.icon,
     this.info,
     this.colorBorder,
+    this.cursorColor,
     this.validator,
     this.textInputType,
     this.inputFormatters,
@@ -149,6 +153,7 @@ class TextForm extends StatelessWidget {
             ),
           if (isTitle) SizedBox(height: distance ?? 10),
           TextFormField(
+            cursorColor: cursorColor,
             obscureText: obscureText,
             onChanged: onChanged,
             maxLength: maxLength,
