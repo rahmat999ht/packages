@@ -153,7 +153,7 @@ class TextForm extends StatelessWidget {
             ),
           if (isTitle) SizedBox(height: distance ?? 10),
           TextFormField(
-            cursorColor: cursorColor,
+            cursorColor: cursorColor ?? colorBorder ?? Colors.black87,
             obscureText: obscureText,
             onChanged: onChanged,
             maxLength: maxLength,
