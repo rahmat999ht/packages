@@ -27,7 +27,7 @@ class TextForm extends StatelessWidget {
   final bool isCheck;
   final bool isTitle;
   final bool isBorder;
-  final bool? obscureText;
+  final bool obscureText;
   final int? maxLength;
   final double? radius;
   final double? hintSize;
@@ -149,7 +149,7 @@ class TextForm extends StatelessWidget {
             ),
           if (isTitle) SizedBox(height: distance ?? 10),
           TextFormField(
-            obscureText: obscureText!,
+            obscureText: obscureText,
             onChanged: onChanged,
             maxLength: maxLength,
             maxLines: null,
