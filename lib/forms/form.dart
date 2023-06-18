@@ -169,7 +169,7 @@ class TextForm extends StatelessWidget {
             inputFormatters: isPhone
                 ? [
                     MaskTextInputFormatter(
-                      mask: '+62############',
+                      mask: '+62-###-####-#####',
                       filter: {"#": RegExp(r'[0-9]')},
                       initialText: "##",
                       type: MaskAutoCompletionType.eager,
