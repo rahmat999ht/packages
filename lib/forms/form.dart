@@ -152,7 +152,7 @@ class TextForm extends StatelessWidget {
             obscureText: obscureText,
             onChanged: onChanged,
             maxLength: maxLength,
-            maxLines: null,
+            maxLines: 1,
             minLines: 1,
             controller: controller,
             validator: isCheck == true
