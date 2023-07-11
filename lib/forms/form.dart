@@ -145,10 +145,10 @@ class TextForm extends StatelessWidget {
           if (isTitle)
             Text(
               title!,
-              style: const TextStyle(
+              style: TextStyle(
                 fontSize: 14,
                 fontWeight: FontWeight.bold,
-                color: Colors.grey,
+                color: labelColor ?? Colors.grey,
               ),
             ),
           if (isTitle) SizedBox(height: distance ?? 10),
